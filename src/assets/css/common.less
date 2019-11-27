@@ -1,0 +1,875 @@
+
+.wrap{
+  width: 1100px;
+  margin: 0 auto;
+}
+.container {
+  width: 100%;
+  padding: 0 58px 0 40px;
+  margin: 0 auto;
+}
+@keyframes topToBottom {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .wrap {
+    width: 100%;
+  }
+}
+.isClick{
+  cursor: pointer;
+  user-select: none;
+  &:active{
+    opacity: 0.6;
+  }
+}
+/*按鈕hover*/
+.button--ujarak:hover::before {
+  opacity: .8;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.button--ujarak.button--inverted::before {
+  background: #ffa114;
+}
+.button--ujarak::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  background: #fff;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transform: scale3d(0.5, 1, 1);
+  transform: scale3d(0.5, 1, 1);
+  -webkit-transition: -webkit-transform .6s, opacity 0.4s;
+  transition: transform 0.4s, opacity .6s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.button--ujarak,.button--ujarak::before {
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.login-user{
+   position: relative;
+   .error-msg {
+     position: absolute;
+     z-index: 4;
+     top: 0;
+     left: 0;
+     font-size: 14px;
+     color: #e93a3a;
+     opacity: 0;
+     //transition: all .2s linear;
+     &.clssuserMsg {
+       opacity: 1;
+       top: 100px;
+       transition: all .2s linear;
+     }
+   }
+ }
+.login-password{
+  position: relative;
+  .error-msg {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    color: #e93a3a;
+    opacity: 0;
+    //transition: all .2s linear;
+    &.clssPsdMsg {
+      opacity: 1;
+      top: 100px;
+      transition: all .2s linear;
+    }
+  }
+}
+// 首页banner幻灯片
+.home-wrap .banner{
+  position: relative;
+}
+.home-wrap .swiper-container{
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.home-wrap .swiper-container .swiper-wrapper {
+  display: flex;
+  height: 100%;
+}
+.home-wrap .swiper-pagination {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+  font-size: 0;
+}
+.home-wrap .swiper-pagination .swiper-pagination-bullet{
+  margin-right: 10px;
+  cursor: pointer;
+  width: 48px;
+  height: 20px;
+  display: inline-block;
+  border-bottom: 1px solid #fff;
+}
+.home-wrap .swiper-pagination .swiper-pagination-bullet-active {
+  border-bottom: 1px solid #0874dc;
+}
+.lang-select{
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background-color: rgba(0,0,0, .2);
+  width: 130px;
+  height: 0;
+  overflow: hidden;
+  transition: all .5s linear;
+  box-shadow: 0 3px 3px rgba(0,0,0,.2);
+  .lang{
+    text-align: center;
+  }
+}
+.sharer-select{
+  position: absolute;
+  left: -1px;
+  top: 48px;
+  width: 120px;
+  height: 0;
+  z-index: 10;
+  background-color: #101229;
+  border-radius: 4px;
+  transition: all .5s linear;
+  overflow: hidden;
+  box-shadow: 0 3px 3px rgba(0,0,0,.2);
+  .list{
+    text-align: center;
+  }
+}
+//用户中心下拉
+.select-UserCenter{
+  position: absolute;
+  width: 200px;
+  left: 50%;
+  top: 78px;
+  transform: translateX(-50%);
+  max-height: 0;
+  z-index: 10;
+  background-color: rgba(3,13,26,.5);
+  box-shadow: 0 3px 3px rgba(0,0,0, .2);
+  transition: max-height .5s linear;
+  overflow: hidden;
+  &.selectUserCenter{
+    max-height: 200px;
+  }
+  .userNav{
+    line-height: 40px;
+    text-align: center;
+    &:hover{
+      background-color: rgba(0,0,0, .1);
+    }
+  }
+}
+.cnShow{
+  display: none;
+  .cn &{
+    display: block;
+  }
+}
+.enShow{
+  display: none;
+  .en &{
+    display: block;
+  }
+}
+.web-pc, .web-mob{
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .web-pc{
+    display: block;
+  }
+  .mob-header{
+    display: none !important;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .web-pc{
+    display: none;
+  }
+  .mob-header{
+    display: block !important;
+  }
+  .page{
+    font-size: 15px;
+  }
+  .web-mob{
+    display: block;
+  }
+  .account-tit, .location{
+    display: none;
+  }
+  .h-wrap{
+    width: auto;
+  }
+}
+@media screen and (max-width: 320px) {
+  .page{
+    font-size: 14px;
+  }
+}
+.no-hd{
+  position: absolute;
+  width: 100%;
+  height: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(250, 181, 42, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: height 0.5s linear;
+  overflow: hidden;
+  &.noactive{
+    height: 100%;
+  }
+  .con-hd{
+    text-align: center;
+    font-size: 24px;
+    font-family: titleChi;
+    color: #fff;
+  }
+}
+.view-more{
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+}
+input{
+  color: #b05500;
+  &::-webkit-input-placeholder{
+    color: #b05500;
+  }
+  &:-moz-placeholder{
+    color: #b05500;
+  }
+  &::-moz-placeholder{
+    color: #b05500;
+  }
+  &:-ms-input-placeholder{
+    color: #b05500;
+  }
+}
+.wrap-box{
+  max-width: 1320px;
+  margin: 0 auto;
+  @media screen and (max-width: 1200px) {
+    display: none;
+  }
+  .main-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .status-box{
+      margin: 70px 0 40px;
+      display: flex;
+      align-items: center;
+      .status{
+        font-size: 24px;
+        color: #fff;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .number{
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+    .jackpot{
+      margin: 40px 0 90px;
+      font-size: 48px;
+      color: #fff;
+      font-weight: bold;
+    }
+    .current{
+      margin: 40px 0 50px;
+      font-size: 48px;
+      color: #fff;
+      font-weight: bold;
+      @media screen and (max-width: 1200px) {
+       display: none;
+      }
+    }
+    .app-current{
+      margin: 40px 0 150px;
+      font-size: 48px;
+      color: #fff;
+      font-weight: bold;
+      display: none;
+      @media screen and (max-width: 1200px) {
+        display: block;
+      }
+      @media screen and (max-width: 450px) {
+        font-size: 30px;
+      }
+    }
+    .jackpot-img{
+      width: 683px;
+      height: 368px;
+      position: relative;
+      margin-top: 116px;
+      .box-bg{
+        position: absolute;
+        width: 324px;
+        height: 295px;
+        left: 50%;
+        top: 28%;
+        transform: translate(-50%, -50%);
+        img{
+          display: block;
+          width: 100%;
+          //animation: topToBottom .5s linear infinite;
+        }
+      }
+      .close-box {
+        position: absolute;
+        width: 324px;
+        height: 295px;
+        left: 50%;
+        top: 48%;
+        transform: translate(-50%, -50%);
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+      .box-money{
+        position: absolute;
+        width: 320px;
+        height: 350px;
+        left: 50%;
+        top: 20%;
+        transform: translate(-50%, -50%);
+        img{
+          display: block;
+          width: 100%;
+        }
+      }
+      .box-tree{
+        width: 100%;
+        height: 100%;
+        img{
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+    .game-box{
+      width: 800px;
+      height: 80px;
+      margin: 20px 0 80px;
+      .finish-box{
+        background-image: url("../../assets/images/finish/bg.png");
+        width: 800px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        .finish-top{
+          font-weight: bold;
+          font-size: 24px;
+          span{
+            color: #fff;
+          }
+          i{
+            color: #ffcc00;
+            border-bottom: 2px solid #FFCC00;
+            outline: none;
+            cursor: pointer;
+            user-select: none;
+          }
+        }
+        .finish-bottom{
+          margin-top: 10px;
+          font-weight: bold;
+          font-size: 24px;
+          color: #fff;
+        }
+      }
+      .game-box-panel{
+        width: 800px;
+        height: 80px;
+        background: url("../../assets/images/going/going.png");
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .warp{
+          height: 80px;
+          width: 800px;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          ul{
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            li{
+              display: flex;
+              line-height: 80px;
+              font-weight: bold;
+              padding-left: 20px;
+              list-style-position: inside;
+              .user{
+                font-size: 24px;
+                color: #fff;
+              }
+              .money{
+                font-size: 24px;
+                color: #febb2e;
+              }
+            }
+          }
+        }
+        .no-people{
+          font-weight: bold;
+          color: #fff;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+.myPopup {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.5);
+  @media screen and (max-width: 768px) {
+    .myPopup .myPopup-box{
+      width: 80%;
+      height: 100%;
+    }
+  }
+}
+.myPopup .myPopup-box {
+  width: 496px;
+  padding: 40px;
+  //color: #1a1a1a;
+  position: relative;
+  border: 20px solid #ffc233;
+  border-radius: 20px;
+  background-color: #ffef94;
+  box-shadow: 0 0 5px #d7d9db;
+  @media screen and (max-width: 768px) {
+    border: 10px solid #ffc233;
+    border-radius: 10px;
+  }
+  li{
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    color: #1a1a1a;
+    height: 100%;
+    line-height: 38px;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    border-radius: 4px;
+    &.activeVerify{
+      background-color: #ffba14;
+      color: #fff;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .title-status{
+    font-size: 32px;
+    color: #b05500;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    @media screen and (max-width: 768px) {
+      font-size: 24px;
+    }
+    @media screen and (max-width: 420px) {
+      font-size: 16px;
+    }
+  }
+  .success-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .success-btn{
+      margin-right: 20px;
+      display: block;
+      width: 60%;
+      height: 58px;
+      line-height: 58px;
+      border-radius: 30px;
+      text-align: center;
+      background-color: #FFCC00;
+      color: #fff;
+      box-shadow: 0 5px 0px #ffc233;
+      border: 1px solid #ffba14;
+      font-size: 20px;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      @media screen and (max-width: 768px) {
+        width: 80%;
+        height: 48px;
+        line-height: 48px;
+        margin-left: 10px;
+      }
+    }
+    .failed-errinMsg{
+      font-size: 32px;
+      color: #e93a3a;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box{
+    width:70%;
+    padding: 20px;
+  }
+}
+.error-text{
+  margin-top: 60px;
+  font-size: 24px;
+  text-align: center;
+}
+.tip-title{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+.myPopup .myPopup-box .close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  user-select: none
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .close{
+    top: 4px;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+  }
+}
+.myPopup .myPopup-box .close:active {
+  opacity: 0.6;
+}
+.myPopup .myPopup-box .close img{
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .close img{
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+.myPopup .myPopup-box .title {
+  font-size: 36px;
+  color: #b05500;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box .title {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+}
+.myPopup .myPopup-box .pay-price{
+  text-align: center;
+  font-size: 34px;
+  color: #e93a3a;
+  margin-bottom: 52px;
+  .trade-password{
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+}
+.myPopup .myPopup-box .errinMsg{
+  font-size: 24px;
+  color: #e93a3a;
+  text-align: center;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;          /* 不换行 */
+}
+@media screen and (max-width: 768px) {
+  font-size: 16px;
+}
+//.myPopup .myPopup-box input {
+//  height: 48px;
+//  width 100%
+//  font-size 16px
+//  border 1px solid #d7d9db
+//  margin-bottom  30px
+//  position: relative;
+//  border-radius 4px
+//  @media screen and (max-width: 768px) {
+//    width 100%
+//    margin-bottom  20px
+//  }
+//}
+.verifier-tab{
+  display: flex;
+  align-items: center;
+    //justify-content center
+  height: 38px;
+  width: 100%;
+}
+.myPopup .myPopup-box input::-webkit-input-placeholder {
+  text-align: left;
+  opacity: 0.6;
+  color: #666666;
+}
+.isFailed{
+  text-align: center;
+  .failed-errinMsg{
+    font-size: 20px;
+    color: #e93a3a;
+    font-weight: bold;
+  }
+}
+.myPopup .myPopup-box .payMsg-box{
+ position: relative;
+}
+.myPopup .myPopup-box .errmsg-tips{
+  position: absolute;
+  font-size: 20px;
+  color: #FC534C;
+  top: 70px;
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+    top: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  font-size: 14px;
+  margin-top: 0px;
+}
+.pay-box{
+  display: flex;
+  margin-top: 70px;
+  @media screen and (max-width: 768px) {
+    margin-top: 20px;
+  }
+}
+.pay-btn{
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #299C91;
+  color: #fff;
+  box-shadow: 0 5px 0px #ffc233;
+  border: 1px solid #C6C6C6;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .pay-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+.pay-btn:active {
+  opacity: 0.6;
+}
+.tradingCenter-btn {
+  margin-right: 20px;
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #FC534C;
+  color: #fff;
+  box-shadow: 0 5px 0px #ffc233;
+  border: 1px solid #ffba14;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .tradingCenter-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+.failed-btn{
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #FC534C;
+  color: #fff;
+  box-shadow: 0 5px 0px #ffc233;
+  border: 1px solid #ffba14;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .failed-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+.tradingCenter-btn:active {
+  opacity: 0.6;
+}
+.tradingCenter-input {
+  display: block;
+  padding: 0 30px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid #ffc233;
+  font-size: 20px;
+  color: #b05500;
+  height: 48px;
+  width: 100%;
+  margin-bottom:  30px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #FFE08D;
+  box-shadow: 0 5px 0px #ffc233;
+}
+.dialog-enter,.dialog-leave-to{
+  opacity: 0;
+  .g-dialog-wrap{
+    transform: translate(0, -5%)
+  }
+}
+.dialog-enter-active{
+  transition: .3s;
+  .g-dialog-wrap{
+    transition: .3s
+  }
+}
+.dialog-leave-active{
+  transition: .1s;
+  .g-dialog-wrap{
+    transition: .1s
+  }
+}
+@media screen and (max-width: 680px) {
+  .tradingCenter-input {
+    height: 40px;
+    font-size: 12px!important;
+  }
+}
+.load-more-box{
+  padding-bottom: 30px;
+  @media screen and (max-width: 1200px) {
+    margin-top: 20px;
+  }
+  .noData-box{
+    width: 480px;
+    height: 540px;
+    border: 8px solid #ffc233;
+    border-radius: 10px;
+    background-color: #ffef94;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px auto;
+    @media screen and (max-width: 500px) {
+      margin: 0;
+      width: 100%;
+      height: 350px;
+    }
+  }
+  .desc{
+    font-size: 32px;
+    color: #b05500;
+    text-align: center;
+    font-weight: bold;
+    @media screen and (max-width: 1200px) {
+      font-size: 20px;
+    }
+  }
+  .loading-img{
+    width: 180px;
+    height: 117px;
+    margin-bottom: 20px;
+    img{
+      display: block;
+      width: 100%;
+    }
+  }
+}

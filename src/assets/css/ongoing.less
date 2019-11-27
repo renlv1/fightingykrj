@@ -1,0 +1,472 @@
+.myPopupBonus {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.8);
+  .app-popup{
+    position: relative;
+  }
+  .win-img{
+    position: absolute;
+    left: 50%;
+    top: 17%;
+    transform: translate(-50%);
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+  .app-win{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -43%;
+    display: none;
+    @media screen and (max-width: 1200px) {
+      display: block;
+    }
+    @media screen and (max-width: 350px) {
+      display: block;
+      top: -33%;
+      width: 90px;
+      height: 70px;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .app-sorry{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: -43%;
+    display: none;
+    @media screen and (max-width: 1200px) {
+      display: block;
+    }
+    @media screen and (max-width: 350px) {
+      display: block;
+      top: -36%;
+      width: 150px;
+      height: 100px;
+      img{
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .sorry-img{
+    position: absolute;
+    left: 50%;
+    top: 16%;
+    transform: translate(-50%);
+    @media screen and (max-width: 1200px) {
+      display: none;
+    }
+  }
+  .sorry-box{
+    width: 496px;
+    height: 380px;
+    //color: #1a1a1a;
+    position: relative;
+    background: url("../../assets/images/dialog/sorry.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (max-width: 1200px) {
+      width: 360px;
+      height: 300px;
+    }
+    @media screen and (max-width: 350px) {
+      width: 250px;
+      height: 200px;
+    }
+    .formDiv{
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media screen and (max-width: 1200px) {
+        padding-top: 50px;
+      }
+      .title-money{
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 34px;
+        color: #b05500;
+        font-weight: bold;
+        text-shadow: 0px 10px 20px rgba(252,83,76, .4);
+        @media screen and (max-width: 1200px) {
+          font-size: 20px;
+        }
+      }
+      .no-bonus{
+        @media screen and (max-width: 1200px) {
+          padding-top: 30px;
+        }
+        @media screen and (max-width: 350px) {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .myPopupBonus .myPopup-box{
+      width: 80%;
+      height: 100%;
+    }
+  }
+}
+.myPopupBonus .myPopup-box {
+  width: 496px;
+  height: 380px;
+  //color: #1a1a1a;
+  position: relative;
+  background: url("../../assets/images/dialog/congratulation.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media screen and (max-width: 1200px) {
+    width: 360px;
+    height: 300px;
+    }
+  @media screen and (max-width: 350px) {
+    width: 250px;
+    height: 200px;
+  }
+  .formDiv{
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media screen and (max-width: 1200px) {
+      padding-top: 80px;
+    }
+    @media screen and (max-width: 1200px) {
+      padding-top: 60px;
+    }
+    .title-money{
+      text-align: center;
+      font-size: 48px;
+      color: #b05500;
+      font-weight: bold;
+      text-shadow: 0px 10px 20px rgba(252,83,76, .4);
+      @media screen and (max-width: 350px) {
+        font-size: 24px;
+      }
+    }
+  }
+  li{
+    width: 50%;
+    text-align: center;
+    font-size: 16px;
+    color: #1a1a1a;
+    height: 100%;
+    line-height: 38px;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+    border-radius: 4px;
+    &.activeVerify{
+      background-color: #ffba14;
+      color: #fff;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+  .title-status{
+    font-size: 32px;
+    color: #b05500;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .success-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .success-btn{
+      margin-right: 20px;
+      display: block;
+      width: 60%;
+      height: 58px;
+      line-height: 58px;
+      border-radius: 30px;
+      text-align: center;
+      background-color: #FFCC00;
+      color: #fff;
+      box-shadow: 0 5px 0px #ffc233;
+      border: 1px solid #ffba14;
+      font-size: 20px;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+    }
+    .failed-errinMsg{
+      font-size: 32px;
+      color: #e93a3a;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .myPopup .myPopup-box{
+    width:70%;
+    padding: 20px;
+  }
+}
+.error-text{
+  margin-top: 60px;
+  font-size: 24px;
+  text-align: center;
+}
+.tip-title{
+  margin-top: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+.myPopupBonus .myPopup-box .close{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  z-index: 999;
+  cursor: pointer;
+  outline: none;
+  user-select: none
+}
+@media screen and (max-width: 768px) {
+  .myPopupBonus .myPopup-box .close{
+    top: 4px;
+    right: 4px;
+    width: 30px;
+    height: 30px;
+  }
+}
+.myPopupBonus .myPopup-box .close:active {
+  opacity: 0.6;
+}
+.myPopupBonus .myPopup-box .close img{
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+@media screen and (max-width: 768px) {
+  .myPopupBonus .myPopup-box .close img{
+    display: block;
+    width: 15px;
+    height: 15px;
+  }
+}
+.myPopupBonus .myPopup-box .title {
+  font-size: 24px;
+  color: #b05500;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  @media screen and (max-width: 1200px) {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  @media screen and (max-width: 350px) {
+    margin-bottom: 10px;
+  }
+}
+.myPopupBonus .myPopup-box .pay-price{
+  text-align: center;
+  font-size: 34px;
+  color: #e93a3a;
+  margin-bottom: 52px;
+  .trade-password{
+    font-size: 16px;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+}
+.myPopupBonus .myPopup-box .errinMsg{
+  font-size: 24px;
+  color: #e93a3a;
+  text-align: center;
+  word-break:keep-all;           /* 不换行 */
+  white-space:nowrap;          /* 不换行 */
+}
+@media screen and (max-width: 768px) {
+  font-size: 16px;
+}
+//.myPopup .myPopup-box input {
+//  height: 48px;
+//  width 100%
+//  font-size 16px
+//  border 1px solid #d7d9db
+//  margin-bottom  30px
+//  position: relative;
+//  border-radius 4px
+//  @media screen and (max-width: 768px) {
+//    width 100%
+//    margin-bottom  20px
+//  }
+//}
+.verifier-tab{
+  display: flex;
+  align-items: center;
+  //justify-content center
+  height: 38px;
+  width: 100%;
+}
+.myPopupBonus .myPopup-box input::-webkit-input-placeholder {
+  text-align: left;
+  opacity: 0.6;
+  color: #666666;
+}
+.isFailed{
+  text-align: center;
+  .failed-errinMsg{
+    font-size: 20px;
+    color: #e93a3a;
+    font-weight: bold;
+  }
+}
+.myPopupBonus .myPopup-box .errmsg-tips{
+  font-size: 20px;
+  color: #FC534C;
+}
+@media screen and (max-width: 768px) {
+  font-size: 14px;
+  margin-top: 0px;
+}
+.myPopupBonus .pay-box{
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  @media screen and (max-width: 768px) {
+    margin-top: 0;
+  }
+}
+.myPopupBonus .pay-btn{
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #299C91;
+  color: #fff;
+  box-shadow: 0 5px 0px #ffc233;
+  border: 1px solid #C6C6C6;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .myPopupBonus .pay-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .myPopupBonus .pay-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 0;
+    line-height: 40px;
+  }
+}
+.myPopupBonus .pay-btn:active {
+  opacity: 0.6;
+}
+.myPopupBonus .tradingCenter-btn {
+  margin-right: 20px;
+  flex: 1;
+  display: block;
+  width: 100%;
+  height: 58px;
+  line-height: 58px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #FC534C;
+  color: #fff;
+  box-shadow: 0 5px 0px #ffc233;
+  border: 1px solid #ffba14;
+  font-size: 20px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+@media screen and (max-width: 768px) {
+  .myPopupBonus .tradingCenter-btn{
+    height: 40px;
+    font-size: 14px;
+    margin-top: 30px;
+    line-height: 40px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .myPopupBonus .tradingCenter-btn{
+    height: 40px;
+    font-size: 14px;
+    line-height: 40px;
+    margin-top: 0;
+  }
+}
+.myPopupBonus .tradingCenter-btn:active {
+  opacity: 0.6;
+}
+.myPopupBonus .tradingCenter-input {
+  display: block;
+  padding: 0 30px;
+  box-sizing: border-box;
+  outline: none;
+  border: 1px solid #ffc233;
+  font-size: 20px;
+  color: #b05500;
+  height: 48px;
+  width: 100%;
+  margin-bottom:  30px;
+  position: relative;
+  border-radius: 10px;
+  background-color: #FFE08D;
+  box-shadow: 0 5px 0px #ffc233;
+}
+.dialog-enter,.dialog-leave-to{
+  opacity: 0;
+  .g-dialog-wrap{
+    transform: translate(0, -5%)
+  }
+}
+.dialog-enter-active{
+  transition: .3s;
+  .g-dialog-wrap{
+    transition: .3s
+  }
+}
+.dialog-leave-active{
+  transition: .1s;
+  .g-dialog-wrap{
+    transition: .1s
+  }
+}
+@media screen and (max-width: 680px) {
+  .myPopupBonus .tradingCenter-input {
+    height: 40px;
+    font-size: 12px!important;
+  }
+}
